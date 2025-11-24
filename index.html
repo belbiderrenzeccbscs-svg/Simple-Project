@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>File Share</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-auth-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-firestore-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-storage-compat.js"></script>
+</head>
+
+<body>
+  <!-- AUTH PAGE -->
+  <div id="auth-page" class="auth-container">
+    <h2>Welcome to Shitty Project</h2>
+    <p>Sign in with your Google account to continue.</p>
+    <button onclick="signInWithGoogle()" class="google-btn">
+      <img src="https://cdn-icons-png.flaticon.com/512/2702/2702602.png" style="width: 20px; padding-right: 20; vertical-align: middle;">Sign in with Google</button>
+  </div>
+
+  <!-- MAIN PAGE -->
+  <div id="main-page" class="hidden">
+
+    <!-- NAVIGATION BAR -->
+    <nav class="navbar">
+      <button id="feedBtn" class="active" onclick="showFeed()">Feed</button>
+      <button id="trendsBtn" onclick="showTrends()">Trends</button>
+      <button id="profileBtn" onclick="showProfile()">Your Post</button>
+    </nav>
+
+    <!-- UPLOAD AREA -->
+    <div class="upload-section">
+      <h3 style="font-style: italic;">Welcome, <span id="current-user"></span>!</h3>
+      <input type="file" id="fileInput">
+      <textarea id="captionInput" placeholder="Add a caption (optional)..."></textarea>
+      <button onclick="uploadFile()">Upload</button>
+      <button onclick="logout()" id="logoutBtn" class="logout-btn">Logout</button>
+      <button id="clearAllBtn" class="clear-btn" onclick="clearAllPosts()">Clear All Post/s</button>
+    </div>
+
+    <!-- FEED DISPLAY -->
+    <div id="feed"></div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+
+</html>

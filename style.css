@@ -1,0 +1,320 @@
+/* ===== Global Styles ===== */
+body {
+    font-family: "Poppins", "Segoe UI", sans-serif;
+    background: #f0f2f5;
+    margin: 0;
+    padding: 0;
+    color: #333;
+}
+
+/* IMPORTANT: Use !important for guaranteed visibility control */
+.hidden {
+    display: none !important; 
+}
+
+/* General Input/Control Styling */
+input, textarea, button {
+    display: block;
+    width: 90%;
+    max-width: 400px;
+    margin: 10px auto;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 15px;
+    font-family: inherit;
+    box-sizing: border-box; /* Ensures padding doesn't affect total width */
+}
+
+/* Only apply italic style to placeholders */
+input::placeholder, textarea::placeholder {
+    font-style: italic;
+}
+
+/* General Button Styling */
+button {
+    cursor: pointer;
+    background: #1877f2;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 15px;
+    padding: 10px;
+    transition: background 0.2s;
+    font-style: normal; /* Override the input/textarea/button rule */
+}
+
+button:hover {
+    background: #145dbf;
+}
+
+/* Google Sign-In Button */
+.google-btn {
+    background-color: #4285f4;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    max-width: 300px; 
+    margin: 20px auto;
+}
+.google-btn:hover {
+    background-color: #357ae8;
+}
+
+.logout-btn {
+    background: #e63946;
+}
+
+.logout-btn:hover {
+    background-color: darkred;
+}
+
+/* Clear All Posts Button (used only in Profile view) */
+.clear-btn {
+    background: #ffdddd;
+    border: none;
+    border-radius: 10px;
+    padding: 10px 12px;
+    cursor: pointer;
+    transition: 0.3s;
+    color: #333; 
+    font-weight: bold;
+    margin: 10px auto; /* Ensure it is centered within the upload section */
+    max-width: 200px; /* Adjust size to fit content better */
+}
+
+.clear-btn:hover {
+    background: #e63946;
+    color: white;
+}
+
+/* ===== Navbar ===== */
+.navbar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #fff;
+    padding: 0;
+    border-radius: 15px;
+    margin-bottom: 15px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    width: 90%;
+    max-width: 500px;
+    margin: 15px auto;
+}
+
+.navbar button {
+    flex: 1;
+    border: none;
+    background: transparent; /* Clean background */
+    color: #333;
+    padding: 10px 0;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 10px;
+    transition: all 0.3s;
+    max-width: none; /* Override general button max-width */
+    margin: 0;
+}
+
+.navbar button:hover {
+    background: #f0f0f0;
+}
+
+.navbar button.active {
+    background: #1877f2; /* Use primary color for active */
+    color: white;
+    font-weight: bold;
+}
+
+/* ===== Auth Container ===== */
+.auth-container {
+    max-width: 400px;
+    margin: 100px auto;
+    background: white;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    text-align: center;
+}
+
+/* REMOVED: .password-container, .password-box, .eye, .eye-btn styles */
+
+/* ===== Upload Section (Now the main control panel) ===== */
+.upload-section {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    background: #fff;
+    padding: 15px;
+    border-radius: 15px;
+    width: 90%;
+    max-width: 500px;
+    margin: 20px auto;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+    align-items: center; /* Center elements horizontally */
+}
+/* Ensure elements inside upload-section respect its max-width */
+.upload-section * {
+    max-width: 100%; 
+}
+.upload-section input[type="file"],
+.upload-section textarea,
+.upload-section button {
+    width: 90%; /* Restore standard width */
+    max-width: 400px;
+    margin: 5px auto;
+}
+
+/* ===== Post Feed ===== */
+#feed {
+    width: 90%;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.post {
+    background: white;
+    margin: 20px 0;
+    padding: 15px;
+    border-radius: 12px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    position: relative;
+    text-align: left;
+}
+
+.post-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.post-header img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+
+/* File/Video Preview Container */
+.file-name {
+    padding: 15px;
+    background: #f8f8f8;
+    border: 1px dashed #ccc;
+    border-radius: 10px;
+    margin: 10px 0;
+    font-weight: bold;
+    color: #444;
+}
+
+/* ===== Dropdown Menu ===== */
+.menu {
+    margin-left: auto;
+    font-size: 20px;
+    cursor: pointer;
+    color: #666;
+    padding: 5px;
+}
+
+.dropdown {
+    display: none;
+    position: absolute;
+    right: 15px; 
+    top: 45px;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    z-index: 5;
+    min-width: 100px;
+}
+
+.dropdown a {
+    display: block;
+    padding: 8px 12px;
+    color: #333;
+    text-decoration: none;
+    font-style: normal;
+}
+
+.dropdown a:hover {
+    background: #f0f0f0;
+}
+
+/* ===== Image, Video & Caption ===== */
+.preview-img {
+    width: 100%;
+    height: auto;
+    max-height: 400px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin: 10px 0;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+.post video {
+    width: 100%;
+    height: auto;
+    max-height: 400px;
+    border-radius: 10px;
+    margin: 10px 0;
+}
+
+.caption {
+    font-style: italic;
+    color: #555;
+    padding-top: 10px;
+    margin-bottom: 1px;
+    padding-left: 4px;
+}
+
+/* ===== Footer / Reactions ===== */
+.footer {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 8px;
+    font-size: 14px;
+}
+
+.heart {
+    cursor: pointer;
+    font-size: 24px;
+    transition: transform 0.2s;
+}
+
+.heart:hover {
+    transform: scale(1.1);
+}
+
+/* ====== Profile View ====== */
+.profile-card {
+    background: white;
+    border-radius: 15px;
+    padding: 25px;
+    text-align: center;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+    width: 90%;
+    max-width: 500px; 
+    margin: 20px auto 30px auto;
+}
+
+.profile-card .profile-pic {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 10px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+.profile-card h2 {
+    margin: 5px 0;
+    font-size: 20px;
+    color: #333;
+}
+
+.profile-card p {
+    margin: 5px 0;
+    color: #555;
+    font-style: italic;
+}
