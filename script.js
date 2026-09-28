@@ -1,13 +1,13 @@
 console.log("✅ script.js loaded");
 
 const firebaseConfig = {
-  apiKey: "AIzaSyCCAQT9X_o9OAXi98nyb3qUa5rPXeOGmvo",
-  authDomain: "login-a82d1.firebaseapp.com",
-  projectId: "login-a82d1",
-  storageBucket: "login-a82d1.firebasestorage.app",
+  apiKey: "YOUR_API_KEY",
+  authDomain: "YOUR_PROJECT.firebaseapp.xom",
+  projectId: "YOUR_PROJECY",
+  storageBucket: "YOUR_PROJECY.firebasestorage.app",
   messagingSenderId: "84564374740",
-  appId: "1:84564374740:web:3e7a4dcc8323e0e3227741",
-  measurementId: "G-BKMDDPECS4"
+  appId: "YOUR_ID",
+  measurementId: "YOUR_APP_ID"
 };
 
 // ===============================================
